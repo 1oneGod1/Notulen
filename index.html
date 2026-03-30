@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Notulen Rapat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/print.css">
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.2s ease-out forwards; }
+        .auto-resize { overflow-y: hidden; resize: none; }
+        #loading-overlay { transition: opacity 0.3s ease; }
+        .hidden-overlay { opacity: 0; pointer-events: none; }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen pb-32">
+    <div id="loading-overlay" class="fixed inset-0 bg-slate-100/80 backdrop-blur-sm z-[100] flex flex-col items-center justify-center hidden-overlay">
+        <i class="fas fa-circle-notch fa-spin text-4xl text-emerald-600 mb-4"></i>
+        <p id="loading-text" class="font-bold text-slate-700 animate-pulse">Memuat aplikasi...</p>
+    </div>
+
+    <div id="app" class="max-w-6xl mx-auto p-4 md:p-8"></div>
+    <div id="print-root"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-database-compat.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>
