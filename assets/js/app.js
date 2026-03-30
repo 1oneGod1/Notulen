@@ -89,7 +89,7 @@ function renderListPage(documents = []) {
                                 </div>
                             </div>
                             <div class="text-emerald-700 font-semibold text-sm flex items-center gap-2">
-                                Buka Editor <i class="fas fa-chevron-right"></i>
+                                Lihat Preview <i class="fas fa-chevron-right"></i>
                             </div>
                         </button>`).join('') : `
                         <div class="px-6 py-16 text-center">
@@ -277,7 +277,7 @@ document.addEventListener('click', (event) => {
         return;
     }
     if (action === 'open-document') {
-        routeTo(`#/edit/${actionEl.getAttribute('data-id')}`);
+        routeTo(`#/view/${actionEl.getAttribute('data-id')}`);
         return;
     }
     if (action === 'save-document') {
